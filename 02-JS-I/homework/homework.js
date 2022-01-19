@@ -71,7 +71,9 @@ function tienenMismaLongitud(str1, str2) {
   // Devuelve "true" si las dos strings tienen la misma longitud
   // De lo contrario, devuelve "false"
   // Tu código:
-  if( str1 === str2){
+  str1 = str1.length;
+  str2 = str2.length;
+  if( str1 == str2){
     return true;
   }else{
     return false;
@@ -93,7 +95,7 @@ function mayorQueCincuenta(num) {
   // Devuelve "true" si el argumento de la función "num" es mayor que cincuenta
   // De lo contrario, devuelve "false"
   // Tu código:
-  if( num > 90 ){
+  if( num > 50 ){
     return true;
   }else{
     return false;
@@ -170,10 +172,12 @@ function esPositivo(numero) {
   //Si el número es positivo, devolver ---> "Es positivo"
   //Si el número es negativo, devolver ---> "Es negativo"
   //Si el número es 0, devuelve false
-  if( numero < 0 ){
+  if( numero > 0 ){
     return "Es positivo";
-  }else{
+  }else if( numero < 0){
     return "Es negativo";
+  }else{
+    return false;
   }
 }
 
@@ -196,7 +200,7 @@ function obtenerSaludo(nombre) {
   // Toma la string "nombre" y concatena otras string en la cadena para que tome la siguiente forma:
   // "Martin" -> "Hola Martin!"
   // Tu código:
-  var stringN = "hola " + nombre + "!";
+  var stringN = "Hola " + nombre + "!";
   return stringN;
 }
 
@@ -235,14 +239,16 @@ function esVocal(letra){
   //que no se puede procesar el dato mediante el mensaje "Dato incorrecto".
   // Si no es vocal, tambien debe devolver "Dato incorrecto".
   //Escribe tu código aquí
-  var vocal = ["a" ,"e" ,"i" ,"o", "u"];
+  
 
   if( (letra.length) == 1 ){
 
     for(var i = 0 ; i < 5 ; i++ ){
 
+      var vocal = ["a" ,"e" ,"i" ,"o", "u"];
+
       if( letra == vocal[i] ){
-        return "Dato correcto";
+        return "Es vocal";
       }
     }
     return "Dato incorrecto";
